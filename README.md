@@ -53,10 +53,16 @@ Frontend uses `Client/.env` (`VITE_API_BASE_URL=http://localhost:3001/api`).
 - `POST /api/favorites/:templateId` (auth)
 - `GET /api/favorites` (auth)
 
+Main Template Section 
+<img width="1317" height="912" alt="Screenshot 2026-05-20 223152" src="https://github.com/user-attachments/assets/cc132c01-4740-42b8-a49a-76bdd7f1aa7c" />
+
+Favorite Template Section
+<img width="1312" height="911" alt="Screenshot 2026-05-20 223206" src="https://github.com/user-attachments/assets/ce27b651-10c7-4f2c-b154-4e62c3115ef7" />
+
+
 ## Author
 
 - Name: T. CHETHAN
 - Contact: chethanuni2002@gmail.com
 =======
-# Fullstack_Intern_Task
->>>>>>> df170287db88deb9d0e6fe910026cc56427bb5da
+
