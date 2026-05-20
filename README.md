@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fullstack-intern-task (Mini SaaS Template Store)
 
 Full-stack app with auth, templates listing, and favorites.
@@ -56,3 +57,6 @@ Frontend uses `Client/.env` (`VITE_API_BASE_URL=http://localhost:3001/api`).
 
 - Name: T. CHETHAN
 - Contact: chethanuni2002@gmail.com
+=======
+# Fullstack_Intern_Task
+>>>>>>> df170287db88deb9d0e6fe910026cc56427bb5da
