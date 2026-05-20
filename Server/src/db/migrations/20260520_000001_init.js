@@ -1,0 +1,43 @@
+exports.up = async function up(knex) {
+  await knex.schema.createTable("users", (table) => {
+    table.increments("id").primary();
+    table.string("name").notNullable();
+    table.string("email").notNullable().unique();
+    table.string("password_hash").notNullable();
+    table.timestamp("created_at").notNullable().defaultTo(knex.fn.now());
+  });
+
+  await knex.schema.createTable("templates", (table) => {
+    table.increments("id").primary();
+    table.string("name").notNullable();
+    table.text("description").notNullable();
+    table.string("thumbnail_url").notNullable();
+    table.string("category").notNullable();
+    table.timestamp("created_at").notNullable().defaultTo(knex.fn.now());
+  });
+
+  await knex.schema.createTable("favorites", (table) => {
+    table.increments("id").primary();
+    table
+      .integer("user_id")
+      .notNullable()
+      .references("id")
+      .inTable("users")
+      .onDelete("CASCADE");
+    table
+      .integer("template_id")
+      .notNullable()
+      .references("id")
+      .inTable("templates")
+      .onDelete("CASCADE");
+    table.unique(["user_id", "template_id"]);
+    table.timestamp("created_at").notNullable().defaultTo(knex.fn.now());
+  });
+};
+
+exports.down = async function down(knex) {
+  await knex.schema.dropTableIfExists("favorites");
+  await knex.schema.dropTableIfExists("templates");
+  await knex.schema.dropTableIfExists("users");
+};
+
